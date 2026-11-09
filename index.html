@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Argentina Is Here 🇦🇷 | Bad Omens</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="images/FAVI.png">
+  <link rel="apple-touch-icon" href="images/FAVI.png">
+
+  <!-- META ETIQUETAS BÁSICAS -->
+  <meta name="description" content="Muro colectivo de fans argentinos para Bad Omens. Dejá tu mensaje y mostremos que Argentina está acá.">
+  <meta name="author" content="Comunidad Bad Omens Argentina">
+  <meta name="theme-color" content="#b8002b">
+
+  <!-- OPEN GRAPH (WhatsApp, Instagram, Facebook, Discord) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://badomens.com.ar/">
+  <meta property="og:title" content="Argentina Is Here 🇦🇷 | Bad Omens — The Wall">
+  <meta property="og:description" content="Fans from Argentina are waiting for you. Sumá tu mensaje al muro para que la banda vea a su comunidad en Argentina.">
+  <meta property="og:image" content="images/fondo_Wall.avif">
+
+  <!-- TWITTER CARDS (X / Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Argentina Is Here 🇦🇷 | Bad Omens — The Wall">
+  <meta name="twitter:description" content="Fans from Argentina are waiting for you. Dejá tu mensaje en el muro colectivo.">
+  <meta name="twitter:image" content="images/fondo_Wall.avif">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- CONTENEDOR MAESTRO DE 3 COLUMNAS -->
+  <div class="site-layout">
+
+    <!-- BANNER LATERAL IZQUIERDO: COMUNIDAD INSTAGRAM CON IMAGEN -->
+    <aside class="side-banner side-banner-left">
+      <div class="banner-slot">
+        
+        <div class="community-banner">
+          <span class="banner-tag">COMUNIDAD</span>
+
+          <!-- Imagen con enlace directo a Instagram -->
+          <a href="https://instagram.com/badomensargentina" target="_blank" rel="noopener noreferrer" class="community-avatar-link">
+            <div class="community-avatar-wrapper">
+              <img 
+                src="images/logoig_boarg.jpg" 
+                alt="Bad Omens Argentina" 
+                class="community-avatar"
+              >
+            </div>
+          </a>
+
+          <h3>BAD OMENS ARGENTINA</h3>
+          
+          <a href="https://instagram.com/badomensargentina" target="_blank" rel="noopener noreferrer" class="banner-action-button">
+            SEGUIR EN INSTAGRAM
+          </a>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- COLUMNA CENTRAL (CONTENIDO INTERACTIVO) -->
+    <main class="main-content">
+
+      <!-- PORTADA -->
+      <section class="hero">
+
+        <div class="hero-label">
+          🇦🇷 ARGENTINA IS HERE
+        </div>
+
+        <h1>THE WALL</h1>
+
+        <p class="subtitle">
+          Fans from Argentina are waiting for you.
+        </p>
+
+      </section>
+
+      <!-- FORMULARIO -->
+      <section id="formContainer" class="form-container hidden">
+
+        <h2>Dejá tu mensaje 🇦🇷</h2>
+
+        <p>
+          Hacé saber que Argentina está acá.
+        </p>
+
+        <form id="messageForm">
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Tu nombre (opcional)"
+            maxlength="100"
+          >
+
+          <input
+            type="text"
+            id="city"
+            placeholder="Ciudad"
+            maxlength="100"
+            required
+          >
+
+          <select id="province" required>
+            <option value="">Seleccioná tu provincia</option>
+            <option>Buenos Aires</option>
+            <option>Catamarca</option>
+            <option>Chaco</option>
+            <option>Chubut</option>
+            <option>Córdoba</option>
+            <option>Corrientes</option>
+            <option>Entre Ríos</option>
+            <option>Formosa</option>
+            <option>Jujuy</option>
+            <option>La Pampa</option>
+            <option>La Rioja</option>
+            <option>Mendoza</option>
+            <option>Misiones</option>
+            <option>Neuquén</option>
+            <option>Río Negro</option>
+            <option>Salta</option>
+            <option>San Juan</option>
+            <option>San Luis</option>
+            <option>Santa Cruz</option>
+            <option>Santa Fe</option>
+            <option>Santiago del Estero</option>
+            <option>Tierra del Fuego</option>
+            <option>Tucumán</option>
+            <option>Ciudad Autónoma de Buenos Aires</option>
+          </select>
+
+          <textarea
+            id="message"
+            placeholder="Escribí tu mensaje para Bad Omens..."
+            maxlength="1000"
+            required
+          ></textarea>
+
+          <button type="submit">
+            PUBLICAR MENSAJE
+          </button>
+
+          <p id="formStatus"></p>
+
+        </form>
+
+      </section>
+
+      <!-- MURO DE MENSAJES -->
+      <section id="messagesSection">
+
+        <h2>YOUR MESSAGES</h2>
+
+        <button id="joinButton" class="wall-button">
+          DEJÁ TU MENSAJE
+        </button>
+
+        <div id="messagesContainer">
+          <p>Cargando mensajes...</p>
+        </div>
+
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <p class="footer-disclaimer">
+          Sitio web no oficial desarrollado por la comunidad de fans en Argentina.
+        </p>
+        <p class="footer-copy">
+          Bad Omens © Todos los derechos pertenecen a sus respectivos autores y discográfica.
+        </p>
+      </footer>
+
+    </main>
+
+    <!-- BANNER LATERAL DERECHO: SPOTIFY + PUBLICIDAD -->
+    <aside class="side-banner side-banner-right">
+      <div class="banner-slot right-stack">
+
+        <!-- SPOTIFY EMBED -->
+        <div class="spotify-widget">
+          <span class="banner-tag">ESCUCHÁ AHORA</span>
+          <iframe 
+            data-testid="embed-iframe" 
+            style="border-radius:12px; margin-top:8px;" 
+            src="https://open.spotify.com/embed/artist/3Ri4H12KFyu98LMjSoij5V?utm_source=generator&theme=0" 
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <!-- ESPACIO DE PUBLICIDAD -->
+        <div class="ad-container">
+          <span class="banner-placeholder">ESPACIO PUBLICITARIO</span>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
