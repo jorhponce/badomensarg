@@ -380,9 +380,9 @@ flex: 0 0 230px; /* Ancho fijo garantizado para cada banner lateral */
 
 .form-container {
   max-width: 550px;
-  width: 90%;
-  margin: 10px auto 25px;
-  padding: 24px;
+  width: 94%;
+  margin: 10px auto 20px;
+  padding: 18px 14px;
   background: #11141b;
   border: 1px solid #252b35;
   border-radius: 4px;
