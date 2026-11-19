@@ -32,7 +32,7 @@ a, a:visited, a:hover, a:active {
 }
 
 .hidden {
-  display: none !important;
+   none !important;
 }
 
 
@@ -46,11 +46,14 @@ a, a:visited, a:hover, a:active {
   align-items: stretch;
   min-height: 100vh;
   width: 100%;
+  gap: 12px;
+  padding: 0 12px;
 }
 
 .main-content {
-  width: 100%;
-  max-width: 1100px;
+flex: 1 1 auto;
+  min-width: 0; /* Evita que el contenido desborde */
+  max-width: 920px; /* Deja lugar real para los dos costados en 1080p */
   background: rgba(8, 9, 13, 0.82);
   backdrop-filter: blur(8px);
   border-left: 1px solid rgba(255, 255, 255, 0.05);
@@ -66,9 +69,8 @@ a, a:visited, a:hover, a:active {
 ========================= */
 
 .side-banner {
-  flex: 1;
-  max-width: 250px;
-  padding: 30px 12px;
+flex: 0 0 230px; /* Ancho fijo garantizado para cada banner lateral */
+  padding: 30px 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -631,23 +633,24 @@ a, a:visited, a:hover, a:active {
    DISEÑO RESPONSIVE (CELULARES Y TABLETS)
 ========================= */
 
-@media (max-width: 1050px) {
-
-  /* El layout pasa de horizontal a vertical */
+@media (max-width: 950px) {
   .site-layout {
     flex-direction: column;
     align-items: center;
+    padding: 0;
+    gap: 0;
   }
 
   .main-content {
     border-left: none;
     border-right: none;
-    order: 1; /* El hero y muro quedan en el medio */
+    order: 1;
     width: 100%;
+    max-width: 100%;
   }
 
   .side-banner {
-    display: flex; /* Se muestran los banners */
+    flex: none;
     width: 100%;
     max-width: 550px;
     padding: 15px 14px;
