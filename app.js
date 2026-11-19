@@ -63,13 +63,16 @@ async function loadMessages() {
 
 // Botón para desplegar / ocultar el formulario
 joinButton.addEventListener("click", () => {
-  formContainer.classList.toggle("hidden");
+  const isHidden = formContainer.classList.toggle("hidden");
 
-  if (!formContainer.classList.contains("hidden")) {
+  if (!isHidden) {
+    joinButton.textContent = "CERRAR FORMULARIO";
     formContainer.scrollIntoView({
       behavior: "smooth",
       block: "center"
     });
+  } else {
+    joinButton.textContent = "DEJÁ TU MENSAJE";
   }
 });
 
@@ -108,6 +111,13 @@ messageForm.addEventListener("submit", async (event) => {
 
     formStatus.textContent = "🇦🇷 ¡Mensaje enviado! Quedará pendiente de aprobación.";
     messageForm.reset();
+
+    // Oculta el formulario automáticamente después de 2.5 segundos
+    setTimeout(() => {
+      formContainer.classList.add("hidden");
+      joinButton.textContent = "DEJÁ TU MENSAJE";
+      formStatus.textContent = "";
+    }, 2500);
 
   } catch (error) {
     console.error(error);
